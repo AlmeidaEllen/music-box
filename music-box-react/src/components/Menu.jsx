@@ -6,7 +6,7 @@ function Menu() {
   return(
     <>
       <nav>
-        <div class="container">
+        <div className="container">
             <img src={logoVerde} alt="Logo" class="logo" />
             <img src={avatar} alt="Avatar" class="avatar" />
         </div>
