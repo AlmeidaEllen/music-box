@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ItemMusica from "../components/ItemMusica";
+import { useNavigate } from "react-router-dom";
 import Menu from "../components/Menu";
 import api from "../api";
 
 function Musicas() {
+  const navigate = useNavigate(); 
   const [musicas, setMusicas] = useState([]);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ function Musicas() {
         console.log(err);
       });
   }, []);
+
+  function irPaginaAdicionar(){
+    navigate("/adicionar")
+  }
 
   return (
     <>
@@ -37,6 +43,7 @@ function Musicas() {
               genero={musica.categoria}
               ano={musica.ano}
               id={musica.id}
+              imagem={musica.imagem}
               key={musica.id}
             />
           ))}
